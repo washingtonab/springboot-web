@@ -17,13 +17,13 @@ public class MyController {
 		return "hello";
 	}
 
-	@RequestMapping(name = "/parameter", method = RequestMethod.GET)
+	@RequestMapping(value = "/parameter", method = RequestMethod.GET)
 	@ResponseBody
 	public String parameterRequest(@RequestParam String param) {
 		return param;
 	}
 
-	@RequestMapping(name = "/body", method = RequestMethod.POST)
+	@RequestMapping(value = "/body", method = RequestMethod.POST)
 	@ResponseBody
 	public String body(@RequestBody String body) {
 		return body;
@@ -32,15 +32,6 @@ public class MyController {
 	@RequestMapping(value = "/responseJson", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE })
 	@ResponseBody
 	public MyPojo responseJson() {
-		MyPojo myPojo = new MyPojo();
-		myPojo.setNome("Donald Trump");
-		myPojo.setEndereco("United States");
-		return myPojo;
-	}
-
-	@RequestMapping(value = "/responseXml", method = RequestMethod.GET, produces = { MediaType.APPLICATION_XML_VALUE })
-	@ResponseBody
-	public MyPojo responseXml() {
 		MyPojo myPojo = new MyPojo();
 		myPojo.setNome("Donald Trump");
 		myPojo.setEndereco("United States");
